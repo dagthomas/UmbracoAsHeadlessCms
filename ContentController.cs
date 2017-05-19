@@ -11,7 +11,7 @@ using Skybrud.WebApi.Json;
 using Umbraco.Core.Services;
 using Umbraco.Core.Models;
 
-namespace cms8.Controller
+namespace dagCMS.Controller
 {
 
     [JsonOnlyConfiguration]
