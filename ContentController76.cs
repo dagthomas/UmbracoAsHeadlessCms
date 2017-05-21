@@ -51,10 +51,12 @@ public class ContentController : UmbracoApiController
             // Om noden har barn
             if (inputNode.Children.Count > 0)
             {
-                foreach (Node child in inputNode.Children.Cast<Node>().OrderBy(x => x.CreateDate))
+                var contentPages = ApplicationContext.Services.ContentService.GetChildren(inputNode.Id).OrderBy(x => x.CreateDate).Where(page => page.Trashed == false && page.Published == true);
+
+                foreach (var item in contentPages)
                 {
-                    // Legger enkle objekter til i nodeListe
-                    nodeListe.Add(single(child));
+                    Node childNode = new Node(item.Id);
+                    nodeListe.Add(single(childNode));
                 }
             }
             else
