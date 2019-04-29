@@ -12,7 +12,7 @@ using System.Web.Mvc;
 using System.Runtime.Caching;
 using System.Collections;
 using System.Web;
-
+ 
 /// <summary>
 /// Attribute that can be added to controller methods to force content
 /// to be GZip encoded if the client supports it
